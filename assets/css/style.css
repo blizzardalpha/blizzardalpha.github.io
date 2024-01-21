@@ -1,0 +1,265 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #333;
+    background-image: url(/assets/images/ds.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+div.shapes{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+}
+div.shapes img:nth-child(1){
+    width: 100px;
+    position: absolute;
+    top: -40px;
+    left: 57px;
+    filter: blur(10px);
+
+}
+div.shapes img:nth-child(2){
+    width: 250px; 
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    filter: blur(10px);
+}
+div.wrapper{
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    /* box-shadow: -10px 10px 40px black; */
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    border-left: 0;
+    border-bottom: 0;
+    width: 90%;
+    height: 90vh;
+    position: relative;
+    top: 25px;
+    overflow: hidden;
+}
+
+main{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+main .logo{
+    position: absolute;
+    left: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 270px;
+}
+main .logo .logoimg{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+main .logo .logoimg img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+
+}
+main .logo .logotext img{
+    width: 200px;
+    filter: opacity(.8);
+}
+main .top-right{
+    position: absolute;
+    right: 10px;
+    width: 260px;
+    display: flex;
+    justify-content: space-around;
+}
+main .top-right .search{
+    width: 150px;
+    height: 25px;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 40px;
+    display: flex;
+}
+main .top-right .search input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    width: 130px;
+    color: white;
+}
+main .top-right .dev{
+    width: 100px;
+    height: 25px;
+    background: radial-gradient(circle at top left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+main .top-right .dev:hover{
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+main .top-right .dev .about{
+    width: fit-content;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+section nav{
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    backdrop-filter: blur(2px);
+}
+section nav .nav{
+    height: 80%;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+section nav .navitem {
+    width: 40px;
+    height: 40px;
+    background-image: url(/assets/images/circle.png);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+
+}
+section nav .navitem{
+    transition:0.3s ease-in all;
+    position: relative;
+}
+section nav .navitem .push{
+    width: 25px;
+    height: 100px;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+}
+section nav .navitem .navicon{
+    width: 25px;
+    height: 25px;
+    transition: 0.3s ease-in all;
+}
+section nav .navitem:hover{
+    transform: translateX(10px);
+}
+section nav .navitem.active{
+    transform: translateX(25px);
+    scale: 1.2;
+}
+section nav .navitem:hover .navicon{
+    /* filter: invert(); */
+    transform: rotate(-15deg);
+    scale: 1.2;
+}
+
+section nav .navitem.active .navicon{
+    /* filter: invert(); */
+    transform: rotate(0deg);
+}
+section nav .navitem.active .push{
+    opacity: 1;
+}
+
+section .welcome{
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 460px;
+    height: 150px;
+    overflow: hidden;
+    background: radial-gradient(circle at left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    color: white;
+    margin-left:40px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+section .subscribe{
+    position: absolute;
+    left: 120px;
+    top: 72%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 30px;
+    background: radial-gradient(circle at left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+    color: white;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+}
+section .socials{
+    position: absolute;
+    left: 120px;
+    top: 80%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+section .socials img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s linear all;
+}
+section .socials img:hover{
+    opacity: 1;
+}
+section .photo{
+    position: absolute;
+    right: 40px;
+    width: 30%;
+    height: fit-content;
+    bottom: -10px;
+}
+section .photo img{
+    width: 100%;
+}
+::placeholder{
+    color: white;
+    opacity: 0.6;
+}
