@@ -162,11 +162,21 @@ section nav .navitem {
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
-
-}
-section nav .navitem{
     transition:0.3s ease-in all;
     position: relative;
+}
+section nav .navitem label{
+    position:absolute;
+    left: -25px;
+    writing-mode: vertical-rl;
+    transition: 0.3s linear all;
+    opacity: 0;
+    scale: 0.5;
+    color:white;
+}
+section nav .navitem.active label{
+    opacity: 1;
+    scale: 1;
 }
 section nav .navitem .push{
     width: 25px;
