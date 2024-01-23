@@ -1,7 +1,11 @@
+:root{
+
+}
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -63,7 +67,7 @@ main{
     border-top-left-radius: 20px;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 9;
 }
 main .logo{
     position: absolute;
@@ -130,19 +134,22 @@ main .top-right .dev .about{
     text-decoration: none;
 }
 
-section nav{
+/* section  */
+nav{
     position: absolute;
     width: 60px;
     height: 100%;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     backdrop-filter: blur(2px);
+    z-index: 8;
 }
-section nav .nav{
+/* section  */
+nav .nav{
     height: 80%;
     width: 60px;
     display: flex;
@@ -150,7 +157,8 @@ section nav .nav{
     justify-content: space-around;
     align-items: center;
 }
-section nav .navitem {
+/* section  */
+nav .navitem {
     width: 40px;
     height: 40px;
     background-image: url(/assets/images/circle.png);
@@ -165,7 +173,13 @@ section nav .navitem {
     transition:0.3s ease-in all;
     position: relative;
 }
-section nav .navitem label{
+nav .navitem div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* section  */
+nav .navitem div label{
     position:absolute;
     left: -25px;
     writing-mode: vertical-rl;
@@ -173,42 +187,117 @@ section nav .navitem label{
     opacity: 0;
     scale: 0.5;
     color:white;
+    height: fit-content;
 }
-section nav .navitem.active label{
+/* section  */
+nav .navitem.active div label{
     opacity: 1;
-    scale: 1;
+    scale: .8;
 }
-section nav .navitem .push{
+/* section  */
+/* nav .navitem .push{
     width: 25px;
     height: 100px;
     position: absolute;
     left: 20px;
     opacity: 0;
-}
-section nav .navitem .navicon{
+    transition: 0.3s linear all;
+    transition-delay: 0.1s;
+    scale: 0.3;
+} */
+/* section  */
+/* nav .navitem.active .push{
+    opacity: 0.8;
+    scale: 1;
+} */
+/* section  */
+/* nav .navitem.active#tosettings .push{
+    opacity: 0.9;
+} */
+/* section  */
+/* nav .navitem.active#towallpapers .push{
+    opacity: 0.7;
+} */
+/* section  */
+/* nav .navitem.active#topfps .push{
+    opacity: 0.6;
+    transform: translateX(-0.1px);
+} */
+/* section  */
+nav .navitem .navicon{
     width: 25px;
     height: 25px;
     transition: 0.3s ease-in all;
 }
-section nav .navitem:hover{
+/* section  */
+nav .navitem:hover{
     transform: translateX(10px);
 }
-section nav .navitem.active{
+/* section  */
+nav .navitem.active{
     transform: translateX(25px);
     scale: 1.2;
+    z-index: 9;
 }
-section nav .navitem:hover .navicon{
+/* section  */
+nav .navitem:hover .navicon{
     /* filter: invert(); */
     transform: rotate(-15deg);
     scale: 1.2;
 }
 
-section nav .navitem.active .navicon{
+/* section  */
+nav .navitem.active .navicon{
     /* filter: invert(); */
     transform: rotate(0deg);
 }
-section nav .navitem.active .push{
-    opacity: 1;
+nav .nav .blob{
+    position: absolute;
+    width: 30px;
+    left: 60px;
+    transition: 0.3s ease-in-out all;
+    fill: white;
+    opacity: 0.5;
+    z-index: 1;
+}
+nav .navitem:nth-child(1).active ~ .blob{
+    transform: translateY(-160px);
+}
+nav .navitem:nth-child(2).active ~ .blob{
+    transform: translateY(-80px);
+}
+nav .navitem:nth-child(3).active ~ .blob{
+    transform: translateY(0px);
+}
+nav .navitem:nth-child(4).active ~ .blob{
+    transform: translateY(80px);
+}
+nav .navitem:nth-child(5).active ~ .blob{
+    transform: translateY(160px);
+    opacity: 0.4;
+}
+section{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.masterSection{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.childSection{
+    margin-top: 10%;
+    height: 100%;
+}
+.childSection.home{
+}
+.childSection.wallpapers{
+}
+.childSection.pfps{
 }
 
 section .welcome{
@@ -273,3 +362,19 @@ section .photo img{
     color: white;
     opacity: 0.6;
 }
+
+
+
+
+/* svg#blob{
+width: auto;
+height: 120px;
+position: absolute;
+left: 60px;
+fill:white;
+opacity: 0.6;
+}
+
+nav .navitem:nth-child(3) ~ #blob{
+    transform: translateY(156px);
+} */
