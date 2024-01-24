@@ -1,6 +1,3 @@
-:root{
-
-}
 *{
     box-sizing: border-box;
     padding: 0;
@@ -68,6 +65,7 @@ main{
     display: flex;
     align-items: center;
     z-index: 9;
+    /* background-color: rgba(255, 255, 255, 0.5); */
 }
 main .logo{
     position: absolute;
@@ -287,20 +285,14 @@ section{
     width: 100%;
     z-index: 1;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 .childSection{
-    margin-top: 10%;
+    margin-top: 0%;
     height: 100%;
 }
-.childSection.home{
-}
-.childSection.wallpapers{
-}
-.childSection.pfps{
-}
 
-section .welcome{
+section.home .welcome{
     position: absolute;
     left: 60px;
     top: 50%;
@@ -314,7 +306,7 @@ section .welcome{
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
-section .subscribe{
+section.home .subscribe{
     position: absolute;
     left: 120px;
     top: 72%;
@@ -328,7 +320,7 @@ section .subscribe{
     border: none;
     padding: 0 10px;
 }
-section .socials{
+section.home .socials{
     position: absolute;
     left: 120px;
     top: 80%;
@@ -338,25 +330,91 @@ section .socials{
     display: flex;
     justify-content: space-between;
 }
-section .socials img{
+section.home .socials img{
     width: 40px;
     height: 40px;
     cursor: pointer;
     opacity: 0.7;
     transition: 0.3s linear all;
 }
-section .socials img:hover{
+section.home .socials img:hover{
     opacity: 1;
 }
-section .photo{
+section.home .photo{
     position: absolute;
     right: 40px;
     width: 30%;
     height: fit-content;
     bottom: -10px;
 }
-section .photo img{
+section.home .photo img{
     width: 100%;
+}
+
+.childSection .contentArea{
+    border: 1px solid white;
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    left: 56%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    padding: 10px;
+    overflow-Y:scroll;
+}
+.childSection .contentArea .groupsContainer {
+    padding-top: 20px;
+    display: flex;
+    justify-content:flex-start;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+.childSection .contentArea .groupsContainer .groupCard{
+    width: fit-content;
+    height: 240px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.childSection .contentArea .groupsContainer .groupCard img{
+    width: 100px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+.childSection .contentArea .groupsContainer .groupCard a{
+    width: 80%;
+    padding: 0px;
+}
+.childSection .contentArea .groupsContainer .groupCard button{
+    width: 100%;
+    height: 100%;
+    background: rgba(37,211,102,0.5);
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+/* <section class="childSection groups" id="groups">
+<div class="contentArea">
+    <h3 style="text-align: center; color:#f0f0f0; opacity: 1;">Whatsapp Groups</h3>
+    <div class="groupsContainer">
+        <div class="groupCard"><img src="assets/images/groups/1.jpg" alt="group icon"><p>❤️💎X̶̲̼̻̱̜̌̇̓̔̄̀̃͜͠-̶̢̭̟̜͉̰̲̰͖̉̇̾̂͜Ȁ̶̡̨̢̪̗̩̬̜n̸̟̊͂̔̄̀̉̐́̈͜͠ḭ̶͛͋͂̈͒̃̽̕̕͜͝m̶̠̩̿̊̓̈́̆͒̒̉̈́͌e̵̮͎̎̊ 💎❤️</p><a href="https://chat.whatsapp.com/H6XBPs8ftoqBo8zjORmiwH"><button>Join</button></a></div>
+    </div>
+</div>
+</section> */
+
+div.breaker{
+    width: 100%;
+    height: 100px;
 }
 ::placeholder{
     color: white;
